@@ -27,19 +27,20 @@ $(document).ready(function() {
       grid[0][2] == grid[1][1] &&
       grid[1][1] == grid[2][0]){
         return true
-    }
-    }
+     }
+   }
   }
-  var draw = function () {
-    for(i=0;i<3;i++){
-      for(j=0;j<3;j++){
-        if (grid[i][j] != " ") {
-          return true;
-        }
-      }
-    }
-    alert("It's a Draw!")
-  }
+
+  // var draw = function () {
+  //   for(i=0;i<3;i++){
+  //     for(j=0;j<3;j++){
+  //         if ((gameOver() == false)&&((grid [i][j] == "X") || (grid [i][j] == "O"))){
+  //           return "It's a Draw!"
+  //       }
+  //     }
+  //   }
+  // }
+
 
   $(".col").click(function(){
     var i = $(this).data("i");
@@ -64,24 +65,16 @@ $(document).ready(function() {
         alert("Player 2 Wins!")
       }
     }
-    draw();
-    // debugger;
 
-    });
+  });
 
-
-    $("#reset").click(function(){
-      $(".col").html(" ");
-      for(i=0;i<3;i++){
-        for(j=0;j<3;j++){
-        grid[i][j] = " ";
-        }
+  $("#reset").click(function(){
+    $(".col").html(" ");
+    for(i=0;i<3;i++){
+      for(j=0;j<3;j++){
+      grid[i][j] = " ";
       }
-    });
+    }
+  });
 
-  // $("#reset").click(function(){
-  //   for(i=0;i<3;i++){
-  //     grid[i][0] = " "
-  //   }
-  // });
 });
